@@ -1,11 +1,13 @@
-public class{
+package is.ru.tictactoe;
 
-	public static void main(String[] args[0])
-	{
-		System.out.println("Welcome to wonderful world of Tic-Tac-Toe");
+public class TicTacToe{
 
-
-
-
-	}
+    public static void main(String[] args)
+    {
+	test();
+    }
+    
+    public static String test(){
+    	return("TicTacToe");
+    }
 }
