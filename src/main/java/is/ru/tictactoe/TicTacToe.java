@@ -25,14 +25,19 @@ public class TicTacToe{
     public static void main(String[] args)
     {
 	test();
+	TicTacToe tc = new TicTacToe();
+	getColCount(tc);
     }
     
     public static String test(){
     	return("TicTacToe");
     }
 
-    public static int getRowCount(){
-    	TicTacToe tc = new TicTacToe();
-    	return tc.board.length;
+    public static int getRowCount(TicTacToe tc){
+       	return tc.board.length;
     }
+    
+    public static int getColCount(TicTacToe tc){
+    	return tc.board[0].length;
+    }	
 }
