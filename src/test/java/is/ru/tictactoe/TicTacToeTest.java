@@ -14,10 +14,17 @@ public class TicTacToeTest {
     }
     @Test
     public void testHowManyRows(){
-	assertEquals(5, TicTacToe.getRowCount());
+	TicTacToe tc = new TicTacToe();
+	assertEquals(5, TicTacToe.getRowCount(tc));
+    }
+    @Test
+    public void testHowManyCol(){
+	TicTacToe tc = new TicTacToe();
+	assertEquals(5, TicTacToe.getColCount(tc));
     }
     @Test
     public void testIfRightSymbolInRightPlace(){
-	assertEquals('|', TicTacToe.boardcheck(0,1));
+	TicTacToe tc = new TicTacToe();
+	assertEquals('|', TicTacToe.boardcheck(tc,0,1));
     }
 }	
