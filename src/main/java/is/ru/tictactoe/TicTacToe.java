@@ -3,11 +3,11 @@ package is.ru.tictactoe;
 public class TicTacToe{
     public static final int ONE = 1;
     public static final int TWO = 2;
-    public static final int THREE = 3;
+    public static int THREE = 3;
     public static final int FOUR = 4;
-    public static final int FIVE = 5;
+    public static int FIVE = 5;
     public static final int SIX = 6;
-    public static final int SEVEN = 7;
+    public static int SEVEN = 7;
     public static final int EIGHT = 8;
     public static final int NINE = 9;
     public static final char EMPTY = ' ';    
@@ -30,7 +30,7 @@ public class TicTacToe{
 		board[2][1] = '|';
 		board[2][2] = ' ';
 		board[2][3] = '|';
-		board[2][4] = 'X';
+		board[2][4] = ' ';
 		board[3][0] = '-';
 		board[3][1] = ' ';
 		board[3][2] = '-';
@@ -72,4 +72,37 @@ public class TicTacToe{
 	    System.out.println();
 	}
     }	
+    public static boolean hasWon(TicTacToe tc)
+	{
+		int rounds = 0;
+		//if(rounds > 4)
+		//{
+			/*if(ONE == TWO && ONE == THREE && ONE != ' '){
+				return true;
+			}
+			if(FOUR == FIVE && FOUR == SIX && FOUR != ' '){
+				return true;
+			}
+			if(SEVEN == EIGHT && SEVEN == NINE && SEVEN != ' '){
+				return true;
+			}
+			if(ONE == FOUR && ONE == SEVEN && ONE != ' '){
+				return true;
+			}
+			if(TWO == FIVE && TWO == EIGHT && TWO != ' '){
+				return true;
+			}
+			if(THREE == SIX && THREE == NINE && THREE != ' '){
+				return true;
+			}
+			if(ONE == FIVE && ONE == NINE && ONE != ' '){
+				return true;
+			}*/
+			if(tc.THREE == tc.FIVE && tc.THREE == tc.SEVEN && tc.THREE != ' '){
+				return true;
+			}
+			//return false;
+		//}
+		return false;
+	}
 }

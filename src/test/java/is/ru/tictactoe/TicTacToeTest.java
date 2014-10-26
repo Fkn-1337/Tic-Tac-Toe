@@ -32,4 +32,13 @@ public class TicTacToeTest {
 	TicTacToe tc = new TicTacToe();
 	assertEquals('-', TicTacToe.boardcheck(tc,1,0));
     }
+
+    @Test
+    public void testHasWonDiaganol1(){
+	TicTacToe tc = new TicTacToe();
+        tc.THREE = 'X';
+	tc.FIVE = 'X';
+	tc.SEVEN = 'X';
+	assertEquals(true, TicTacToe.hasWon(tc));
+    }
 }	
