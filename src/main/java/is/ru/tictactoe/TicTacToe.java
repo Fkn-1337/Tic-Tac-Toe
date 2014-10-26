@@ -16,7 +16,7 @@ public class TicTacToe{
 
     public TicTacToe(){
     	board = new char[5][5];
-		board[0][0] = 'O';
+		board[0][0] = ' ';
 		board[0][1] = '|';
 		board[0][2] = ' ';
 		board[0][3] = '|';
@@ -47,6 +47,7 @@ public class TicTacToe{
 	test();
 	TicTacToe tc = new TicTacToe();
 	getColCount(tc);
+	printBoard(tc);
     }
     
     public static String test(){
@@ -62,5 +63,13 @@ public class TicTacToe{
 
     public static int getColCount(TicTacToe tc){
     	return tc.board[0].length;
+    }
+    public static void printBoard(TicTacToe tc){
+    	for(int i = 0; i < 5; i++){
+	    for(int j = 0; j < 5; j++){
+		System.out.print(tc.board[i][j]);
+	    }
+	    System.out.println();
+	}
     }	
 }
