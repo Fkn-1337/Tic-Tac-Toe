@@ -27,4 +27,9 @@ public class TicTacToeTest {
 	TicTacToe tc = new TicTacToe();
 	assertEquals('|', TicTacToe.boardcheck(tc,0,1));
     }
+    @Test
+    public void testIfRightSymbolInRightPlace2(){
+	TicTacToe tc = new TicTacToe();
+	assertEquals('-', TicTacToe.boardcheck(tc,1,0));
+    }
 }	
