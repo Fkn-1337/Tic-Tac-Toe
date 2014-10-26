@@ -16,7 +16,7 @@ public class TicTacToe{
 
     public TicTacToe(){
     	board = new char[5][5];
-		board[0][0] = 'O';
+		board[0][0] = ' ';
 		board[0][1] = '|';
 		board[0][2] = ' ';
 		board[0][3] = '|';
@@ -30,7 +30,7 @@ public class TicTacToe{
 		board[2][1] = '|';
 		board[2][2] = ' ';
 		board[2][3] = '|';
-		board[2][4] = 'X';
+		board[2][4] = ' ';
 		board[3][0] = '-';
 		board[3][1] = ' ';
 		board[3][2] = '-';
@@ -62,5 +62,38 @@ public class TicTacToe{
 
     public static int getColCount(TicTacToe tc){
     	return tc.board[0].length;
-    }	
+    }
+    public static boolean hasWon(char[][] board1)
+	{
+		int rounds = 0;
+		if(rounds > 4)
+		{
+			if(ONE == TWO && ONE == THREE && ONE != ' '){
+				return true;
+			}
+			if(FOUR == FIVE && FOUR == SIX && FOUR != ' '){
+				return true;
+			}
+			if(SEVEN == EIGHT && SEVEN == NINE && SEVEN != ' '){
+				return true;
+			}
+			if(ONE == FOUR && ONE == SEVEN && ONE != ' '){
+				return true;
+			}
+			if(TWO == FIVE && TWO == EIGHT && TWO != ' '){
+				return true;
+			}
+			if(THREE == SIX && THREE == NINE && THREE != ' '){
+				return true;
+			}
+			if(ONE == FIVE && ONE == NINE && ONE != ' '){
+				return true;
+			}
+			if(THREE == FIVE && THREE == SEVEN && THREE != ' '){
+				return true;
+			}
+			return false;
+		}
+		return false;
+	}
 }
