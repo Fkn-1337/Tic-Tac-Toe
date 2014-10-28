@@ -1,0 +1,7 @@
+*.swp
+*.class
+*.xml
+*.bin
+*.lock
+*.html
+~/TicTacToe/build
