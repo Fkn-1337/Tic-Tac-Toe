@@ -4,4 +4,4 @@
 *.bin
 *.lock
 *.html
-~/TicTacToe/build/*
+/build/*
