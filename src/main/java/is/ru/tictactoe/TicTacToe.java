@@ -106,4 +106,16 @@ public class TicTacToe{
 		//}
 		return false;
 	}
+
+	     public static boolean checkifDraw(int rounds){
+     if(rounds >= 9)
+		 return true;
+	else
+       		return false;
+    
+     }
+
+
+
+
 }
