@@ -34,7 +34,7 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void testHasWonDiagonal1(){
+    public void testHasWonDiagonal_1_X(){
 	TicTacToe newgame = new TicTacToe();
         newgame.THREE = 'X';
 	newgame.FIVE = 'X';
@@ -53,4 +53,13 @@ public class TicTacToeTest {
 
 
 
-}	
+    @Test 
+    public void testHasWonDiagonal_2_X(){
+        TicTacToe newgame = new TicTacToe();
+        newgame.ONE = 'X';
+        newgame.FIVE = 'X';
+        newgame.NINE = 'X';
+        assertEquals(true, TicTacToe.hasWon(newgame));
+    }
+}
+	
