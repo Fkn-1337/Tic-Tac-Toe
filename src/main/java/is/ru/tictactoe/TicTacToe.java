@@ -2,7 +2,7 @@ package is.ru.tictactoe;
 
 public class TicTacToe{
     public static int ONE = 1;
-    public static final int TWO = 2;
+    public static int TWO = 2;
     public static int THREE = 3;
     public static final int FOUR = 4;
     public static int FIVE = 5;
@@ -80,6 +80,9 @@ public class TicTacToe{
 			if(newgame.THREE == newgame.FIVE && newgame.THREE == newgame.SEVEN && newgame.THREE != ' '){
 				return true;
 			}
+			if(newgame.ONE == newgame.TWO && newgame.ONE == newgame.THREE && newgame.ONE != ' '){
+	                        return true;
+	                }
 			return false;
 	}
 

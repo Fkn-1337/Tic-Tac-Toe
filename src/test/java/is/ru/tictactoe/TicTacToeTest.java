@@ -62,5 +62,18 @@ public class TicTacToeTest {
         newgame.NINE = 'X';
         assertEquals(true, TicTacToe.hasWon(newgame));
     }
+
+
+    @Test 
+    public void testHasWonRow_1_X(){
+        TicTacToe newgame = new TicTacToe();
+        newgame.ONE = 'X';
+        newgame.TWO = 'X';
+        newgame.THREE = 'X';
+        assertEquals(true, TicTacToe.hasWon(newgame));
+    }
+   
+
+
 }
 	
