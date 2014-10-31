@@ -8,9 +8,9 @@ public class TicTacToe{
     public static int FIVE = 5;
     public static int SIX = 6;
     public static int SEVEN = 7;
-    public static final int EIGHT = 8;
+    public static int EIGHT = 8;
     public static int NINE = 9;
-    public static final char EMPTY = ' ';    
+    public static char EMPTY = ' ';    
 
     private static char[][] board;
 
@@ -84,6 +84,10 @@ public class TicTacToe{
 	                        return true;
 	                }
 			if(newgame.FOUR == newgame.FIVE && newgame.FOUR == newgame.SIX && newgame.FOUR != ' '){
+	                        return true;
+	                }
+
+			if(newgame.SEVEN == newgame.EIGHT && newgame.SEVEN == newgame.NINE && newgame.SEVEN != ' '){
 	                        return true;
 	                }
 			return false;
