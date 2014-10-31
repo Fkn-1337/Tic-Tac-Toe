@@ -47,10 +47,11 @@ public class TicTacToeTest {
         assertEquals(true, TicTacToe.checkifDraw(9));   
 
     }
-
-
-
-
+    @Test
+    public void testDraw2(){
+       TicTacToe newgame = new TicTacToe();
+       assertEquals(false, TicTacToe.checkifDraw(8));
+    }
 
 
     @Test 
