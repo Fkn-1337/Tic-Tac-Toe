@@ -14,31 +14,32 @@ public class TicTacToeTest {
     }
     @Test
     public void testHowManyRows(){
-	TicTacToe tc = new TicTacToe();
-	assertEquals(5, TicTacToe.getRowCount(tc));
+	TicTacToe newgame = new TicTacToe();
+	assertEquals(5, TicTacToe.getRowCount(newgame));
     }
     @Test
     public void testHowManyCol(){
-	TicTacToe tc = new TicTacToe();
-	assertEquals(5, TicTacToe.getColCount(tc));
+	TicTacToe newgame = new TicTacToe();
+	assertEquals(5, TicTacToe.getColCount(newgame));
     }
     @Test
     public void testIfRightSymbolInRightPlace(){
-	TicTacToe tc = new TicTacToe();
-	assertEquals('|', TicTacToe.boardcheck(tc,0,1));
+	TicTacToe newgame = new TicTacToe();
+	assertEquals('|', TicTacToe.boardcheck(newgame,0,1));
     }
     @Test
     public void testIfRightSymbolInRightPlace2(){
-	TicTacToe tc = new TicTacToe();
-	assertEquals('-', TicTacToe.boardcheck(tc,1,0));
+	TicTacToe newgame = new TicTacToe();
+	assertEquals('-', TicTacToe.boardcheck(newgame,1,0));
     }
 
     @Test
-    public void testHasWonDiaganol1(){
-	TicTacToe tc = new TicTacToe();
-        tc.THREE = 'X';
-	tc.FIVE = 'X';
-	tc.SEVEN = 'X';
-	assertEquals(true, TicTacToe.hasWon(tc));
+    public void testHasWonDiagonal1(){
+	TicTacToe newgame = new TicTacToe();
+        newgame.THREE = 'X';
+	newgame.FIVE = 'X';
+	newgame.SEVEN = 'X';
+	assertEquals(true, TicTacToe.hasWon(newgame));
     }
+
 }	
