@@ -1,7 +1,7 @@
 package is.ru.tictactoe;
 
 public class TicTacToe{
-    public static final int ONE = 1;
+    public static int ONE = 1;
     public static final int TWO = 2;
     public static int THREE = 3;
     public static final int FOUR = 4;
@@ -9,7 +9,7 @@ public class TicTacToe{
     public static final int SIX = 6;
     public static int SEVEN = 7;
     public static final int EIGHT = 8;
-    public static final int NINE = 9;
+    public static int NINE = 9;
     public static final char EMPTY = ' ';    
 
     private static char[][] board;
@@ -45,65 +45,41 @@ public class TicTacToe{
     public static void main(String[] args)
     {
 	test();
-	TicTacToe tc = new TicTacToe();
-	getColCount(tc);
-	printBoard(tc);
+	TicTacToe newgame = new TicTacToe();
+	getColCount(newgame);
+	printBoard(newgame);
     }
     
     public static String test(){
     	return("TicTacToe");
     }
 
-    public static int getRowCount(TicTacToe tc){
-       	return tc.board.length;
+    public static int getRowCount(TicTacToe newgame){
+       	return newgame.board.length;
     }
-    public static int boardcheck(TicTacToe tc, int a, int b){
-	return tc.board[a][b];
+    public static int boardcheck(TicTacToe newgame, int a, int b){
+	return newgame.board[a][b];
     }
 
-    public static int getColCount(TicTacToe tc){
-    	return tc.board[0].length;
+    public static int getColCount(TicTacToe newgame){
+    	return newgame.board[0].length;
     }
-    public static void printBoard(TicTacToe tc){
+    public static void printBoard(TicTacToe newgame){
     	for(int i = 0; i < 5; i++){
 	    for(int j = 0; j < 5; j++){
-		System.out.print(tc.board[i][j]);
+		System.out.print(newgame.board[i][j]);
 	    }
 	    System.out.println();
 	}
     }
 	
-    public static boolean hasWon(TicTacToe tc)
+    public static boolean hasWon(TicTacToe newgame)
 	{
 		int rounds = 0;
-		//if(rounds > 4)
-		//{
-			/*if(ONE == TWO && ONE == THREE && ONE != ' '){
+		
+			if(newgame.THREE == newgame.FIVE && newgame.THREE == newgame.SEVEN && newgame.THREE != ' '){
 				return true;
 			}
-			if(FOUR == FIVE && FOUR == SIX && FOUR != ' '){
-				return true;
-			}
-			if(SEVEN == EIGHT && SEVEN == NINE && SEVEN != ' '){
-				return true;
-			}
-			if(ONE == FOUR && ONE == SEVEN && ONE != ' '){
-				return true;
-			}
-			if(TWO == FIVE && TWO == EIGHT && TWO != ' '){
-				return true;
-			}
-			if(THREE == SIX && THREE == NINE && THREE != ' '){
-				return true;
-			}
-			if(ONE == FIVE && ONE == NINE && ONE != ' '){
-				return true;
-			}*/
-			if(tc.THREE == tc.FIVE && tc.THREE == tc.SEVEN && tc.THREE != ' '){
-				return true;
-			}
-			//return false;
-		//}
-		return false;
+			return false;
 	}
 }
