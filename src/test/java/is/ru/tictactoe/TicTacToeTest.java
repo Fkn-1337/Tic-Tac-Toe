@@ -98,8 +98,20 @@ public class TicTacToeTest {
         newgame.ONE = 'X';
         newgame.FOUR = 'X';
         newgame.SEVEN = 'X';
-        assertEquals(true, newgame.hasWon(newgame));
+        assertEquals(true, TicTacToe.hasWon(newgame));
     }
+ 
+    @Test
+    public void resetBoardTest(){
+        
+	TicTacToe newgame = new TicTacToe();
+	newgame.board[0][0] = 'X';
+	newgame.resetBoard();
+	assertEquals(' ', TicTacToe.boardcheck(newgame,0,0));
+	
+
+    }
+    
 
 }
 
