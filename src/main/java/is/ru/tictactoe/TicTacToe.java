@@ -1,15 +1,15 @@
 package is.ru.tictactoe;
 
 public class TicTacToe{
-    public static int ONE = 1;
-    public static int TWO = 2;
-    public static int THREE = 3;
-    public static int FOUR = 4;
-    public static int FIVE = 5;
-    public static int SIX = 6;
-    public static int SEVEN = 7;
-    public static int EIGHT = 8;
-    public static int NINE = 9;
+    public static char ONE = ' ';
+    public static char TWO = ' ';
+    public static char THREE = ' ';
+    public static char FOUR = ' ';
+    public static char FIVE = ' ';
+    public static char SIX = ' ';
+    public static char SEVEN = ' ';
+    public static char EIGHT = ' ';
+    public static char NINE = ' ';
     public static char EMPTY = ' ';    
 
     private static char[][] board;
