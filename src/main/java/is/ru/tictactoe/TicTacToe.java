@@ -61,10 +61,50 @@ public class TicTacToe{
     
     public static boolean updateBoard(char symb, int i)
     {
-    	if(i == 1) {
+    	if(i == 1){
 	    board[0][0] = symb;
 	    ONE = symb;
 	    return true;
+	}
+	else if(i == 2){
+	    board[0][2] = symb;
+	    TWO = symb;
+	    return true;
+	}
+	else if(i == 3){
+	    board[0][4] = symb;
+	    THREE = symb;
+	    return true;
+	}
+	else if(i == 4){
+	    board[2][0] = symb;
+	    FOUR = symb;
+	    return true;
+	}
+	else if(i == 5){
+	   board[2][2] = symb;
+	   FIVE = symb;
+	   return true;
+	}
+	else if(i == 6){
+	   board[2][4] = symb;
+	   SIX = symb;
+	   return true;
+	}
+	else if(i == 7){
+	   board[4][0] = symb;
+	   SEVEN = symb;
+	   return true;
+	}
+	else if(i == 8){
+	   board[4][2] = symb;
+	   EIGHT = symb;
+	   return true;
+	}
+	else if(i == 9){
+	   board[4][4] = symb;
+	   NINE = symb;
+	   return true;
 	}
 	else
 	    return false;
