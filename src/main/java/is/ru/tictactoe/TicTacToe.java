@@ -1,5 +1,6 @@
 package is.ru.tictactoe;
-
+//import com.googleintrocs.princeton-java-introduction;
+import java.util.Scanner;
 import edu.princeton.cs.introcs.In;
 import edu.princeton.cs.introcs.StdOut;
 
@@ -51,12 +52,23 @@ public class TicTacToe{
 	TicTacToe newgame = new TicTacToe();
 	getColCount(newgame);
 	printBoard(newgame);
+	//StdOut.println("Virkar");
     }
     
     public static String test(){
     	return("TicTacToe");
     }
-
+    
+    public static boolean updateBoard(char symb, int i)
+    {
+    	if(i == 1) {
+	    board[0][0] = symb;
+	    ONE = symb;
+	    return true;
+	}
+	else
+	    return false;
+    }
     public static int getRowCount(TicTacToe newgame){
        	return newgame.board.length;
     }
@@ -151,7 +163,35 @@ public class TicTacToe{
         SEVEN = ' ';
         EIGHT = ' ';
         NINE = ' ';
-    }
+	}
+
+     public static boolean goAgain(TicTacToe tc){
+	StdOut.println();
+	StdOut.print("do you wand to go again? (y/n): " );
+	Scanner in = new Scanner(System.in);
+	String again = in.nextLine();
+	if(again.equals("y")) {
+		//rounds = 0;
+		tc.resetBoard();
+		return true;
+	}
+	else
+	return false;
+	}
+
+    public static boolean goAgainTEST(String n){
+	 TicTacToe tc = new TicTacToe();
+         StdOut.println();
+         StdOut.print("do you wand to go again? (y/n): " );
+         if(n =="y") {
+                 //rounds = 0;
+                 tc.resetBoard();
+                 return true;
+         }       
+         else
+         return false;
+         }
+   
     
     public static  boolean isAlreadyTaken(int i){
 		if(i == 1 && ONE == ' '){
