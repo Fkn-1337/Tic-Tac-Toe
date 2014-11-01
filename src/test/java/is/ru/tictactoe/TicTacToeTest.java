@@ -151,6 +151,20 @@ public class TicTacToeTest {
 	assertEquals(' ', TicTacToe.boardcheck(newgame,0,2));
 	assertEquals(' ', TicTacToe.boardcheck(newgame,4,0));
     }
+
+    @Test
+    public void updateBoardTest(){
+	TicTacToe newgame = new TicTacToe();
+	assertEquals(true, newgame.updateBoard('X', 1));
+	assertEquals('X',  newgame.boardcheck(newgame,0, 0));
+    } 
+    
+    @Test
+    public void updateBoardTest2(){
+	TicTacToe newgame = new TicTacToe();
+	assertEquals(false, newgame.updateBoard('X', 15));
+	assertEquals(' ', newgame.boardcheck(newgame, 0, 0));	
+    }   
     
     @Test
     public void checkingGoAgain(){
@@ -179,7 +193,18 @@ public class TicTacToeTest {
 	newgame.ONE = ' ';
 	assertEquals(false, TicTacToe.isAlreadyTaken(1));
     }    
-
+    @Test
+    public void alreadyTakenTest_3(){
+	TicTacToe newgame = new TicTacToe();
+        newgame.resetBoard();
+        assertEquals(false, TicTacToe.isAlreadyTaken(5));
+    }
+    @Test
+     public void alreadyTakenTest_4(){
+        TicTacToe newgame = new TicTacToe();
+        newgame.FIVE = 'O';
+        assertEquals(true, TicTacToe.isAlreadyTaken(5));
+    }
 
     @Test
     public void isWrongInputTest_1(){
@@ -192,5 +217,4 @@ public class TicTacToeTest {
         TicTacToe newgame = new TicTacToe();
         assertEquals(false, newgame.isWrongInput(5));
     }
-
 }

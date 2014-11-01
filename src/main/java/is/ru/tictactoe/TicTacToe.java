@@ -1,7 +1,8 @@
 package is.ru.tictactoe;
+//import com.googleintrocs.princeton-java-introduction;
 import java.util.Scanner;
-//import edu.princeton.cs.introcs.In;
-//import edu.princeton.cs.introcs.StdOut;
+import edu.princeton.cs.introcs.In;
+import edu.princeton.cs.introcs.StdOut;
 
 public class TicTacToe{
   //R Initializes the squares that players can put their symbol in
@@ -53,12 +54,23 @@ public class TicTacToe{
 	TicTacToe newgame = new TicTacToe();
 	getColCount(newgame);
 	printBoard(newgame);
+	//StdOut.println("Virkar");
     }
     
     public static String test(){
     	return("TicTacToe");
     }
-
+    
+    public static boolean updateBoard(char symb, int i)
+    {
+    	if(i == 1) {
+	    board[0][0] = symb;
+	    ONE = symb;
+	    return true;
+	}
+	else
+	    return false;
+    }
     public static int getRowCount(TicTacToe newgame){
        	return newgame.board.length;
     }
@@ -187,18 +199,43 @@ public class TicTacToe{
                  //rounds = 0;
                  newgame.resetBoard();
                  return true;
-         }       
+         }
          else
          return false;
          }
-   
+
 	//checks if the square is already taken 
     public static  boolean isAlreadyTaken(int i){
-	if(i == 1 && ONE == ' '){
-	    return false;
-	} 
-	else {
-	    return true;
-	}
+		if(i == 1 && ONE == ' '){
+			return false;
+		} 
+		else if(i == 2 && TWO == ' '){
+			return false;
+		}
+		else if(i == 3 && THREE == ' '){
+			return false;
+		}
+		else if(i == 4 && FOUR == ' '){
+			return false;
+		}
+		else if(i == 5 && FIVE == ' '){
+			return false;
+		}
+		else if(i == 6 && SIX == ' '){
+			return false;
+		}
+		else if(i == 7 && SEVEN == ' '){
+			return false;
+		}
+		else if(i == 8 && EIGHT == ' '){
+			return false;
+		}
+		else if(i == 9 && NINE == ' '){
+			return false;
+		}
+		else{ 
+			return true;
+		}
+		
 	} 
  }
