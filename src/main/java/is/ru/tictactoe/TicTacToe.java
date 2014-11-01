@@ -1,5 +1,8 @@
 package is.ru.tictactoe;
 
+import edu.princeton.cs.introcs.In;
+import edu.princeton.cs.introcs.StdOut;
+
 public class TicTacToe{
     public static char ONE = ' ';
     public static char TWO = ' ';
