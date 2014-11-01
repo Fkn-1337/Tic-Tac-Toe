@@ -119,6 +119,17 @@ public class TicTacToe{
        	    return false;
     
      }
+     
+       public boolean isWrongInput(int i){
+	if (i > 9 || i < 1){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+
 
     public void resetBoard()
     {
@@ -169,5 +180,15 @@ public class TicTacToe{
          else
          return false;
          }
+   
+    
+    public static  boolean isAlreadyTaken(int i){
+		if(i == 1 && ONE == ' '){
+			return false;
+		} 
+		
+		else { 
+			return true;
+		}
+	} 
  }
-
