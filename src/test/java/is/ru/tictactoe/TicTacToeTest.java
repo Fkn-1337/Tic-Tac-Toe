@@ -224,4 +224,13 @@ public class TicTacToeTest {
         TicTacToe newgame = new TicTacToe();
         assertEquals(false, newgame.isWrongInput(5));
     }
+  
+    @Test
+     public void inputTest() {
+         TicTacToe newgame = new TicTacToe();
+         int a = 10;
+         assertEquals("Wrong input, please try again", newgame.inputTest(a));
+ 
+     }
+ 
 }

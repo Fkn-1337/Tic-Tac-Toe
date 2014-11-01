@@ -277,5 +277,44 @@ public class TicTacToe{
 			return true;
 		}
 		
+	}
+
+    public void input(char symb)
+    {
+		
+	Scanner in = new Scanner(System.in);
+	int i = in.nextInt();
+
+	if(isWrongInput(i)){
+		System.out.println("Wrong input, please try again");
+		input(symb);
+	}
+	else if(isAlreadyTaken(i)){
+		System.out.println("This place is already taken, please try again");
+		input(symb);
+	}
+	else {
+		System.out.println("EFTIR AD FA UPDATE");//updateboard(symb, i);
+	}
+    }
+
+     public String inputTest(int n)
+     {
+	String Andri; 
+         if(isWrongInput(n)){
+		Andri = "Wrong input, please try again";
+                 return Andri;
+             
+         }
+         else if(isAlreadyTaken(n)){
+		Andri = "This place is already taken, please try again";
+                 return Andri;
+         
+         }
+       else{
+	Andri = "Succefull input";
+	return Andri;
 	} 
+
+     }
  }
