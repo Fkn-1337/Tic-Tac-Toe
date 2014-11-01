@@ -5,3 +5,4 @@
 *.lock
 *.html
 /build/*
+.gradle/2.1/*
