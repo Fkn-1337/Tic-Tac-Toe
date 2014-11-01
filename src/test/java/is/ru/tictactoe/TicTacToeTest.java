@@ -160,6 +160,13 @@ public class TicTacToeTest {
 
      }
 
+     @Test
+     public void checkingGoAgainIfTrue(){
+	String check = "y";
+	assertEquals(true, TicTacToe.goAgainTEST(check));
+
+    }
+
     @Test
     public void alreadyTakenTest_1(){
 	TicTacToe newgame = new TicTacToe();
