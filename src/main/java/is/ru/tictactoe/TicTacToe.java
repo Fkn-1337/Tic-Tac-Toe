@@ -1,9 +1,11 @@
 package is.ru.tictactoe;
 import java.util.Scanner;
-import edu.princeton.cs.introcs.In;
-import edu.princeton.cs.introcs.StdOut;
+//import edu.princeton.cs.introcs.In;
+//import edu.princeton.cs.introcs.StdOut;
 
 public class TicTacToe{
+  //R Initializes the squares that players can put their symbol in
+// ONE stands for [0][0] 
     public static char ONE = ' ';
     public static char TWO = ' ';
     public static char THREE = ' ';
@@ -14,7 +16,7 @@ public class TicTacToe{
     public static char EIGHT = ' ';
     public static char NINE = ' ';
     public static char EMPTY = ' ';    
-
+//makes two arrays for the board
     public static char[][] board;
 
     public TicTacToe(){
@@ -69,6 +71,7 @@ public class TicTacToe{
     {
     	return newgame.board[0].length;
     }
+
     public static void printBoard(TicTacToe newgame)
     {
     	for(int i = 0; i < 5; i++){
@@ -82,32 +85,39 @@ public class TicTacToe{
     public static boolean hasWon(TicTacToe newgame)
     {
 	int rounds = 0;
-		
+	// Wins by diagonal in squares 3, 5, 7
 	if(newgame.THREE == newgame.FIVE && newgame.THREE == newgame.SEVEN && newgame.THREE != ' '){
 	    return true;
 	}
+	// Wins by row in squares 1,2,3
 	if(newgame.ONE == newgame.TWO && newgame.ONE == newgame.THREE && newgame.ONE != ' '){
 	    return true;
 	}
+	//Wins by row in squares 4,5,6
 	if(newgame.FOUR == newgame.FIVE && newgame.FOUR == newgame.SIX && newgame.FOUR != ' '){
 	    return true;
 	}
+	//wins by row in squares 7, 8 ,9
 	if(newgame.SEVEN == newgame.EIGHT && newgame.SEVEN == newgame.NINE && newgame.SEVEN != ' '){
 	    return true;
 	}
+	//wins by diagonal in squares 1,4,7
 	if(newgame.ONE == newgame.FOUR && newgame.ONE == newgame.SEVEN && newgame.ONE != ' '){
 	    return true;
 	}
+	//wins by column 3 in a row in squares 1, 5, 7
 	if(newgame.ONE == newgame.FIVE && newgame.ONE == newgame.NINE && newgame.ONE != ' '){
 	    return true;
 	}
+	//wins by column 3 in a row in squares 2, 5, 8
         if(newgame.TWO == newgame.FIVE && newgame.TWO == newgame.EIGHT && newgame.TWO != ' '){
             return true;
         }
+	//wins by column 3 in a row in squares 3, 6, 9
         if(newgame.THREE == newgame.SIX && newgame.THREE == newgame.NINE && newgame.THREE != ' '){
             return true;
         }
-
+	//no winner yet
 	    return false;
     }
 
@@ -119,7 +129,7 @@ public class TicTacToe{
        	    return false;
     
      }
-     
+	//returns true if input is not a legal square
        public boolean isWrongInput(int i){
 	if (i > 9 || i < 1){
 			return true;
@@ -130,7 +140,7 @@ public class TicTacToe{
 	}
 
 
-
+	
     public void resetBoard()
     {
 	board[0][0] = ' ';
@@ -152,43 +162,43 @@ public class TicTacToe{
         EIGHT = ' ';
         NINE = ' ';
 	}
-
-     public static boolean goAgain(TicTacToe tc){
+	
+	//is prompted in the end of the game
+     public static boolean goAgain(TicTacToe newgame){
 	StdOut.println();
 	StdOut.print("do you wand to go again? (y/n): " );
 	Scanner in = new Scanner(System.in);
 	String again = in.nextLine();
 	if(again.equals("y")) {
 		//rounds = 0;
-		tc.resetBoard();
+		newgame.resetBoard();
 		return true;
 	}
 	else
 	return false;
 	}
 
-
+	//couldnt test input so we made a dummy function
       public static boolean goAgainTEST(String n){
-	 TicTacToe tc = new TicTacToe();
+	 TicTacToe newgame = new TicTacToe();
          StdOut.println();
          StdOut.print("do you wand to go again? (y/n): " );
          if(n =="y") {
                  //rounds = 0;
-                 tc.resetBoard();
+                 newgame.resetBoard();
                  return true;
          }       
          else
          return false;
          }
    
-    
+	//checks if the square is already taken 
     public static  boolean isAlreadyTaken(int i){
-		if(i == 1 && ONE == ' '){
-			return false;
-		} 
-		
-		else { 
-			return true;
-		}
+	if(i == 1 && ONE == ' '){
+	    return false;
+	} 
+	else {
+	    return true;
+	}
 	} 
  }
