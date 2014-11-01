@@ -110,7 +110,7 @@ public class TicTacToeTest {
     }
 
      @Test
-    public void testHasWonColumn_2_X(){
+     public void testHasWonColumn_2_X(){
 
         TicTacToe newgame = new TicTacToe();
         newgame.resetBoard();
@@ -120,6 +120,16 @@ public class TicTacToeTest {
         assertEquals(true, TicTacToe.hasWon(newgame));
     }
 	
+     @Test
+     public void testHasWonColumn_3_X(){
+
+        TicTacToe newgame = new TicTacToe();
+        newgame.resetBoard();
+        newgame.THREE = 'X';
+        newgame.SIX = 'X';
+        newgame.NINE = 'X';
+        assertEquals(true, TicTacToe.hasWon(newgame));
+    }
  
     @Test
     public void resetBoardTest(){
