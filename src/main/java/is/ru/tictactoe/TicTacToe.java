@@ -1,5 +1,9 @@
 package is.ru.tictactoe;
 //import com.googleintrocs.princeton-java-introduction;
+import java.util.Scanner;
+import edu.princeton.cs.introcs.In;
+import edu.princeton.cs.introcs.StdOut;
+
 public class TicTacToe{
     public static char ONE = ' ';
     public static char TWO = ' ';
@@ -127,6 +131,17 @@ public class TicTacToe{
        	    return false;
     
      }
+     
+       public boolean isWrongInput(int i){
+	if (i > 9 || i < 1){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+
 
     public void resetBoard()
     {
@@ -149,6 +164,42 @@ public class TicTacToe{
         EIGHT = ' ';
         NINE = ' ';
 	}
-     
- }
 
+     public static boolean goAgain(TicTacToe tc){
+	StdOut.println();
+	StdOut.print("do you wand to go again? (y/n): " );
+	Scanner in = new Scanner(System.in);
+	String again = in.nextLine();
+	if(again.equals("y")) {
+		//rounds = 0;
+		tc.resetBoard();
+		return true;
+	}
+	else
+	return false;
+	}
+
+    public static boolean goAgainTEST(String n){
+	 TicTacToe tc = new TicTacToe();
+         StdOut.println();
+         StdOut.print("do you wand to go again? (y/n): " );
+         if(n =="y") {
+                 //rounds = 0;
+                 tc.resetBoard();
+                 return true;
+         }       
+         else
+         return false;
+         }
+   
+    
+    public static  boolean isAlreadyTaken(int i){
+		if(i == 1 && ONE == ' '){
+			return false;
+		} 
+		
+		else { 
+			return true;
+		}
+	} 
+ }

@@ -163,5 +163,45 @@ public class TicTacToeTest {
     public void updateBoardTest2(){
 	TicTacToe newgame = new TicTacToe();	
     }   
-}
+    
+    @Test
+    public void checkingGoAgain(){
+	TicTacToe newgame = new TicTacToe();
+	String check = "n";	
+	assertEquals(false, TicTacToe.goAgainTEST(check));
 
+     }
+
+     @Test
+     public void checkingGoAgainIfTrue(){
+	String check = "y";
+	assertEquals(true, TicTacToe.goAgainTEST(check));
+
+    }
+
+    @Test
+    public void alreadyTakenTest_1(){
+	TicTacToe newgame = new TicTacToe();
+	newgame.ONE = 'X';
+	assertEquals(true, TicTacToe.isAlreadyTaken(1));
+    }
+    @Test
+    public void alreadyTakenTest_2(){
+	TicTacToe newgame = new TicTacToe();
+	newgame.ONE = ' ';
+	assertEquals(false, TicTacToe.isAlreadyTaken(1));
+    }    
+
+    @Test
+    public void isWrongInputTest_1(){
+	TicTacToe newgame = new TicTacToe();
+	assertEquals(true, newgame.isWrongInput(10));
+    }
+
+    @Test
+    public void isWrongInputTest_2(){
+        TicTacToe newgame = new TicTacToe();
+        assertEquals(false, newgame.isWrongInput(5));
+    }
+
+}
