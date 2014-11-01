@@ -1,5 +1,5 @@
 package is.ru.tictactoe;
-
+//import com.googleintrocs.princeton-java-introduction;
 public class TicTacToe{
     public static char ONE = ' ';
     public static char TWO = ' ';
@@ -48,12 +48,23 @@ public class TicTacToe{
 	TicTacToe newgame = new TicTacToe();
 	getColCount(newgame);
 	printBoard(newgame);
+	//StdOut.println("Virkar");
     }
     
     public static String test(){
     	return("TicTacToe");
     }
-
+    
+    public static boolean updateBoard(char symb, int i)
+    {
+    	if(i == 1) {
+	    board[0][0] = symb;
+	    ONE = symb;
+	    return true;
+	}
+	else
+	    return false;
+    }
     public static int getRowCount(TicTacToe newgame){
        	return newgame.board.length;
     }

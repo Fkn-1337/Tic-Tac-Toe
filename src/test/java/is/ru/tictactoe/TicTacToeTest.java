@@ -151,5 +151,17 @@ public class TicTacToeTest {
 	assertEquals(' ', TicTacToe.boardcheck(newgame,0,2));
 	assertEquals(' ', TicTacToe.boardcheck(newgame,4,0));
     }
+
+    @Test
+    public void updateBoardTest(){
+	TicTacToe newgame = new TicTacToe();
+	assertEquals(true, newgame.updateBoard('X', 1));
+	assertEquals('X',  newgame.boardcheck(newgame,0, 0));
+    } 
+    
+    @Test
+    public void updateBoardTest2(){
+	TicTacToe newgame = new TicTacToe();	
+    }   
 }
 
