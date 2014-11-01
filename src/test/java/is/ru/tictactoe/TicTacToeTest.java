@@ -151,5 +151,17 @@ public class TicTacToeTest {
 	assertEquals(' ', TicTacToe.boardcheck(newgame,0,2));
 	assertEquals(' ', TicTacToe.boardcheck(newgame,4,0));
     }
+    
+    @Test
+    public void alreadyTakenTest_1(){
+	TicTacToe newgame = new TicTacToe();
+	newgame.ONE = 'X';
+	assertEquals(true, TicTacToe.isAlreadyTaken(1));
+    }
+    @Test
+    public void alreadyTakenTest_2(){
+	TicTacToe newgame = new TicTacToe();
+	newgame.ONE = ' ';
+	assertEquals(false, TicTacToe.isAlreadyTaken(1));
+    }    
 }
-

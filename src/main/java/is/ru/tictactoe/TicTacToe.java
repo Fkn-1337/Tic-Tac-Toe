@@ -140,7 +140,16 @@ public class TicTacToe{
         SEVEN = ' ';
         EIGHT = ' ';
         NINE = ' ';
-	}
-     
+    }
+    
+    public static  boolean isAlreadyTaken(int i){
+		if(i == 1 && ONE == ' '){
+			return false;
+		} 
+		
+		else { 
+			return true;
+		}
+	} 
  }
 
