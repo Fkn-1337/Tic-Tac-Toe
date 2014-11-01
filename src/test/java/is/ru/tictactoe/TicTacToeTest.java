@@ -200,6 +200,18 @@ public class TicTacToeTest {
 	newgame.ONE = ' ';
 	assertEquals(false, TicTacToe.isAlreadyTaken(1));
     }    
+    @Test
+    public void alreadyTakenTest_3(){
+	TicTacToe newgame = new TicTacToe();
+        newgame.resetBoard();
+        assertEquals(false, TicTacToe.isAlreadyTaken(5));
+    }
+    @Test
+     public void alreadyTakenTest_4(){
+        TicTacToe newgame = new TicTacToe();
+        newgame.FIVE = 'O';
+        assertEquals(true, TicTacToe.isAlreadyTaken(5));
+    }
 
     @Test
     public void isWrongInputTest_1(){
