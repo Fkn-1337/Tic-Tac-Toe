@@ -157,10 +157,32 @@ public class TicTacToe{
 		if(i == 1 && ONE == ' '){
 			return false;
 		} 
-		
-		else { 
+		else if(i == 2 && TWO == ' '){
+			return false;
+		}
+		else if(i == 3 && THREE == ' '){
+			return false;
+		}
+		else if(i == 4 && FOUR == ' '){
+			return false;
+		}
+		else if(i == 5 && FIVE == ' '){
+			return false;
+		}
+		else if(i == 6 && SIX == ' '){
+			return false;
+		}
+		else if(i == 7 && SEVEN == ' '){
+			return false;
+		}
+		else if(i == 8 && EIGHT == ' '){
+			return false;
+		}
+		else if(i == 9 && NINE == ' '){
+			return false;
+		}
+		else{ 
 			return true;
 		}
 	} 
  }
-
