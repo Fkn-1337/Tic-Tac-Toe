@@ -164,4 +164,17 @@ public class TicTacToeTest {
 	newgame.ONE = ' ';
 	assertEquals(false, TicTacToe.isAlreadyTaken(1));
     }    
+
+    @Test
+    public void isWrongInputTest_1(){
+	TicTacToe newgame = new TicTacToe();
+	assertEquals(true, newgame.isWrongInput(10));
+    }
+
+    @Test
+    public void isWrongInputTest_2(){
+        TicTacToe newgame = new TicTacToe();
+        assertEquals(false, newgame.isWrongInput(5));
+    }
+
 }
