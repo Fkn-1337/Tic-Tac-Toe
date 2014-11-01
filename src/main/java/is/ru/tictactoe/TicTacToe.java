@@ -119,6 +119,17 @@ public class TicTacToe{
        	    return false;
     
      }
+     
+       public boolean isWrongInput(int i){
+	if (i > 9 || i < 1){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+
 
     public void resetBoard()
     {
