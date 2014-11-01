@@ -76,18 +76,29 @@ public class TicTacToe{
     public static boolean hasWon(TicTacToe newgame)
 	{
 		int rounds = 0;
+	
 		
 			if(newgame.THREE == newgame.FIVE && newgame.THREE == newgame.SEVEN && newgame.THREE != ' '){
 				return true;
 			}
+	    
+			if(newgame.ONE == newgame.FIVE && newgame.ONE == newgame.NINE && newgame.ONE != ' '){
+				return true;
+			}	
+		
+			
 		        if(newgame.ONE == newgame.TWO && newgame.ONE == newgame.THREE && newgame.ONE != ' '){
 	                        return true;
 	                }
+				
 		        if(newgame.FOUR == newgame.FIVE && newgame.FOUR == newgame.SIX && newgame.FOUR != ' '){
 	                        return true;
 	                }
-
+				
 		        if(newgame.SEVEN == newgame.EIGHT && newgame.SEVEN == newgame.NINE && newgame.SEVEN != ' '){
+	                        return true;
+	                } 
+			if(newgame.ONE == newgame.FOUR && newgame.ONE == newgame.SEVEN && newgame.ONE != ' '){
 	                        return true;
 	                }
 			return false;
