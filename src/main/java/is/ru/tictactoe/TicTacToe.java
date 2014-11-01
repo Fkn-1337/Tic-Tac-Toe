@@ -80,18 +80,18 @@ public class TicTacToe{
 			if(newgame.THREE == newgame.FIVE && newgame.THREE == newgame.SEVEN && newgame.THREE != ' '){
 				return true;
 			}
-			if(newgame.ONE == newgame.TWO && newgame.ONE == newgame.THREE && newgame.ONE != ' '){
+		        if(newgame.ONE == newgame.TWO && newgame.ONE == newgame.THREE && newgame.ONE != ' '){
 	                        return true;
 	                }
-			if(newgame.FOUR == newgame.FIVE && newgame.FOUR == newgame.SIX && newgame.FOUR != ' '){
+		        if(newgame.FOUR == newgame.FIVE && newgame.FOUR == newgame.SIX && newgame.FOUR != ' '){
 	                        return true;
 	                }
 
-			if(newgame.SEVEN == newgame.EIGHT && newgame.SEVEN == newgame.NINE && newgame.SEVEN != ' '){
+		        if(newgame.SEVEN == newgame.EIGHT && newgame.SEVEN == newgame.NINE && newgame.SEVEN != ' '){
 	                        return true;
 	                }
 			return false;
-	}
+    }
 
 	     public static boolean checkifDraw(int rounds){
      if(rounds >= 9)
@@ -101,7 +101,24 @@ public class TicTacToe{
     
      }
 
-
-
-
+     public void resetBoard(){
+        board[0][0] = ' ';
+        board[0][2] = ' ';
+        board[0][4] = ' ';
+        board[2][0] = ' ';
+        board[2][2] = ' ';
+        board[2][4] = ' ';
+        board[4][0] = ' ';
+        board[4][2] = ' ';
+        board[4][4] = ' ';
+        ONE = ' ';
+        TWO = ' '; 
+        THREE = ' '; 
+        FOUR = ' '; 
+        FIVE = ' '; 
+        SIX = ' '; 
+        SEVEN = ' ';
+        EIGHT = ' ';
+        NINE = ' ';
+	}
 }
