@@ -98,6 +98,10 @@ public class TicTacToe{
 	if(newgame.ONE == newgame.FIVE && newgame.ONE == newgame.NINE && newgame.ONE != ' '){
 	    return true;
 	}
+	 if(newgame.TWO == newgame.FIVE && newgame.TWO == newgame.EIGHT && newgame.TWO != ' '){
+            return true;
+        }
+
 	    return false;
     }
 
