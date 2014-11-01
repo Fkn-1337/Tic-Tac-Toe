@@ -12,7 +12,7 @@ public class TicTacToe{
     public static int NINE = 9;
     public static char EMPTY = ' ';    
 
-    private static char[][] board;
+    public static char[][] board;
 
     public TicTacToe(){
     	board = new char[5][5];
@@ -121,4 +121,5 @@ public class TicTacToe{
         EIGHT = ' ';
         NINE = ' ';
 	}
+     
 }
