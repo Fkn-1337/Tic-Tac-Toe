@@ -1,9 +1,9 @@
-package is.ru.TicTacToe;
+package is.ru.tictactoe;
 
 import spark.*;
 import static spark.Spark.*;
 import spark.servlet.SparkApplication;
-import is.ru.TicTacToe.TicTacToe;
+import is.ru.tictactoe.TicTacToe;
 public class TicTacToeWeb implements SparkApplication {
     public static void main(String[] args){
         staticFileLocation("/public");
