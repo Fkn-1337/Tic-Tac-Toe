@@ -30,6 +30,9 @@ compile 'com.googlecode.princeton-java-introduction:stdlib:1.0.1'
     // 'test.useTestNG()' to your build script.
     testCompile 'junit:junit:4.11'
 }
+
+mainClassName = "is.ru.tictactoe.TicTacToe"
+
 jar {
  manifest {
  attributes("Main-Class": "ru.is.tictactoe.TicTacToe")
