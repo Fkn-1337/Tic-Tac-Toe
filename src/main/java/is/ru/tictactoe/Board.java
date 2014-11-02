@@ -97,8 +97,9 @@ public class Board{
            NINE = symb;
            return true;
         }
-        else
+        else {
             return false;
+       }
     }
 
     public static void printBoard()
@@ -146,11 +147,12 @@ public class Board{
 
     public static boolean checkIfDraw(int rounds)
     {
-        if(rounds >= 9)
+        if(rounds >= 9){
             return true;
-        else
+	}
+        else{
             return false;
-
+	}
     }
 
     //returns true if input is not a legal square
