@@ -39,19 +39,19 @@ public class TicTacToeTest {
         newgame.THREE = 'X';
 	newgame.FIVE = 'X';
 	newgame.SEVEN = 'X';
-	assertEquals(true, TicTacToe.hasWon(newgame));
+	assertEquals(true, TicTacToe.hasWon(newgame, 5));
     }
     
     @Test
     public void testDraw(){
         TicTacToe newgame = new TicTacToe();
-        assertEquals(true, TicTacToe.checkifDraw(9));   
+        assertEquals(true, TicTacToe.checkIfDraw(9));   
 
     }
     @Test
     public void testDraw2(){
        TicTacToe newgame = new TicTacToe();
-       assertEquals(false, TicTacToe.checkifDraw(8));
+       assertEquals(false, TicTacToe.checkIfDraw(8));
     }
 
 
@@ -63,7 +63,7 @@ public class TicTacToeTest {
 	newgame.ONE = 'X';
         newgame.FIVE = 'X';
         newgame.NINE = 'X';
-        assertEquals(true, TicTacToe.hasWon(newgame));
+        assertEquals(true, TicTacToe.hasWon(newgame, 5));
     }
 	
 
@@ -74,7 +74,7 @@ public class TicTacToeTest {
 	newgame.ONE = 'X';
         newgame.TWO = 'X';
         newgame.THREE = 'X';
-        assertEquals(true, TicTacToe.hasWon(newgame));
+        assertEquals(true, TicTacToe.hasWon(newgame, 5));
     }
    	
     @Test 
@@ -84,7 +84,7 @@ public class TicTacToeTest {
         newgame.FOUR = 'X';
         newgame.FIVE = 'X';
         newgame.SIX = 'X';
-        assertEquals(true, TicTacToe.hasWon(newgame));
+        assertEquals(true, TicTacToe.hasWon(newgame, 5));
     }
    
 
@@ -95,7 +95,7 @@ public class TicTacToeTest {
         newgame.SEVEN = 'X';
         newgame.EIGHT = 'X';
         newgame.NINE = 'X';
-        assertEquals(true, TicTacToe.hasWon(newgame));
+        assertEquals(true, TicTacToe.hasWon(newgame, 5));
     }	
 
     @Test 
@@ -106,7 +106,7 @@ public class TicTacToeTest {
         newgame.ONE = 'X';
         newgame.FOUR = 'X';
         newgame.SEVEN = 'X';
-        assertEquals(true, TicTacToe.hasWon(newgame));
+        assertEquals(true, TicTacToe.hasWon(newgame, 5));
     }
 
      @Test
@@ -117,7 +117,7 @@ public class TicTacToeTest {
         newgame.TWO = 'X';
         newgame.FIVE = 'X';
         newgame.EIGHT = 'X';
-        assertEquals(true, TicTacToe.hasWon(newgame));
+        assertEquals(true, TicTacToe.hasWon(newgame, 5));
     }
 	
      @Test
@@ -128,7 +128,7 @@ public class TicTacToeTest {
         newgame.THREE = 'X';
         newgame.SIX = 'X';
         newgame.NINE = 'X';
-        assertEquals(true, TicTacToe.hasWon(newgame));
+        assertEquals(true, TicTacToe.hasWon(newgame, 5));
     }
  
     @Test

@@ -1,8 +1,8 @@
 package is.ru.tictactoe;
 //import com.googleintrocs.princeton-java-introduction;
 import java.util.Scanner;
-import edu.princeton.cs.introcs.In;
-import edu.princeton.cs.introcs.StdOut;
+//import edu.princeton.cs.introcs.In;
+//import edu.princeton.cs.introcs.StdOut;
 
 public class TicTacToe{
   //R Initializes the squares that players can put their symbol in
@@ -19,7 +19,7 @@ public class TicTacToe{
     public static char EMPTY = ' ';    
 //makes two arrays for the board
     public static char[][] board;
-
+    public static int rounds = 0;
     public TicTacToe(){
     	board = new char[5][5];
 	board[0][0] = ' ';
@@ -50,10 +50,12 @@ public class TicTacToe{
     }
     public static void main(String[] args)
     {
-	test();
-	TicTacToe newgame = new TicTacToe();
-	getColCount(newgame);
-	printBoard(newgame);
+	System.out.println("*******Welcome to TicTacToe***********");
+	play();
+	//test();
+	//TicTacToe newgame = new TicTacToe();
+	//getColCount(newgame);
+	//printBoard(newgame);
 	//StdOut.println("Virkar");
     }
     
@@ -134,64 +136,65 @@ public class TicTacToe{
 	}
     }
 	
-    public static boolean hasWon(TicTacToe newgame)
+    public static boolean hasWon(TicTacToe newgame, int rounds)
     {
-	int rounds = 0;
-	// Wins by diagonal in squares 3, 5, 7
-	if(newgame.THREE == newgame.FIVE && newgame.THREE == newgame.SEVEN && newgame.THREE != ' '){
-	    return true;
-	}
-	// Wins by row in squares 1,2,3
-	if(newgame.ONE == newgame.TWO && newgame.ONE == newgame.THREE && newgame.ONE != ' '){
-	    return true;
-	}
-	//Wins by row in squares 4,5,6
-	if(newgame.FOUR == newgame.FIVE && newgame.FOUR == newgame.SIX && newgame.FOUR != ' '){
-	    return true;
-	}
-	//wins by row in squares 7, 8 ,9
-	if(newgame.SEVEN == newgame.EIGHT && newgame.SEVEN == newgame.NINE && newgame.SEVEN != ' '){
-	    return true;
-	}
-	//wins by diagonal in squares 1,4,7
-	if(newgame.ONE == newgame.FOUR && newgame.ONE == newgame.SEVEN && newgame.ONE != ' '){
-	    return true;
-	}
-	//wins by column 3 in a row in squares 1, 5, 7
-	if(newgame.ONE == newgame.FIVE && newgame.ONE == newgame.NINE && newgame.ONE != ' '){
-	    return true;
-	}
-	//wins by column 3 in a row in squares 2, 5, 8
-        if(newgame.TWO == newgame.FIVE && newgame.TWO == newgame.EIGHT && newgame.TWO != ' '){
-            return true;
-        }
-	//wins by column 3 in a row in squares 3, 6, 9
-        if(newgame.THREE == newgame.SIX && newgame.THREE == newgame.NINE && newgame.THREE != ' '){
-            return true;
-        }
-	//no winner yet
+	if(rounds > 3)
+	{
+	    // Wins by diagonal in squares 3, 5, 7
+	    if(newgame.THREE == newgame.FIVE && newgame.THREE == newgame.SEVEN && newgame.THREE != ' '){
+	        return true;
+	    }
+	    // Wins by row in squares 1,2,3
+	    if(newgame.ONE == newgame.TWO && newgame.ONE == newgame.THREE && newgame.ONE != ' '){
+	        return true;
+	    }
+	    //Wins by row in squares 4,5,6
+	    if(newgame.FOUR == newgame.FIVE && newgame.FOUR == newgame.SIX && newgame.FOUR != ' '){
+	        return true;
+	    }
+	    //wins by row in squares 7, 8 ,9
+	    if(newgame.SEVEN == newgame.EIGHT && newgame.SEVEN == newgame.NINE && newgame.SEVEN != ' '){
+	        return true;
+	    }
+	    //wins by diagonal in squares 1,4,7
+	    if(newgame.ONE == newgame.FOUR && newgame.ONE == newgame.SEVEN && newgame.ONE != ' '){
+	        return true;
+	    }
+	    //wins by column 3 in a row in squares 1, 5, 7
+	    if(newgame.ONE == newgame.FIVE && newgame.ONE == newgame.NINE && newgame.ONE != ' '){
+	        return true;
+	    }
+	    //wins by column 3 in a row in squares 2, 5, 8
+            if(newgame.TWO == newgame.FIVE && newgame.TWO == newgame.EIGHT && newgame.TWO != ' '){
+                return true;
+            }
+	    //wins by column 3 in a row in squares 3, 6, 9
+            if(newgame.THREE == newgame.SIX && newgame.THREE == newgame.NINE && newgame.THREE != ' '){
+                return true;
+            }
+	    //no winner yet
 	    return false;
+	    }
+	return false;
     }
 
-    public static boolean checkifDraw(int rounds)
+    public static boolean checkIfDraw(int rounds)
     {
 	if(rounds >= 9)
 	    return true;
 	else
        	    return false;
     
-     }
+    }
 	//returns true if input is not a legal square
-       public boolean isWrongInput(int i){
-	if (i > 9 || i < 1){
-			return true;
-		}
-		else {
-			return false;
-		}
+    public static boolean isWrongInput(int i){
+	if (i > 9 || i < 1){	
+	    return true;
 	}
-
-
+	else {
+	    return false;
+	}
+    }
 	
     public void resetBoard()
     {
@@ -217,104 +220,139 @@ public class TicTacToe{
 	
 	//is prompted in the end of the game
      public static boolean goAgain(TicTacToe newgame){
-	StdOut.println();
-	StdOut.print("do you wand to go again? (y/n): " );
+	System.out.println();
+	System.out.print("Do you want to go again? (y/n): " );
 	Scanner in = new Scanner(System.in);
 	String again = in.nextLine();
 	if(again.equals("y")) {
-		//rounds = 0;
-		newgame.resetBoard();
-		return true;
+	    rounds = 0;
+   	    newgame.resetBoard();
+	    return true;
 	}
 	else
-	return false;
+	    return false;
 	}
 
 	//couldnt test input so we made a dummy function
-      public static boolean goAgainTEST(String n){
+    public static boolean goAgainTEST(String n){
 	 TicTacToe newgame = new TicTacToe();
-         StdOut.println();
-         StdOut.print("do you wand to go again? (y/n): " );
+         System.out.println();
+         System.out.print("do you want to go again? (y/n): " );
          if(n =="y") {
-                 //rounds = 0;
-                 newgame.resetBoard();
-                 return true;
+             rounds = 0;
+             newgame.resetBoard();
+             return true;
          }
          else
-         return false;
+             return false;
          }
 
 	//checks if the square is already taken 
     public static  boolean isAlreadyTaken(int i){
-		if(i == 1 && ONE == ' '){
-			return false;
-		} 
-		else if(i == 2 && TWO == ' '){
-			return false;
-		}
-		else if(i == 3 && THREE == ' '){
-			return false;
-		}
-		else if(i == 4 && FOUR == ' '){
-			return false;
-		}
-		else if(i == 5 && FIVE == ' '){
-			return false;
-		}
-		else if(i == 6 && SIX == ' '){
-			return false;
-		}
-		else if(i == 7 && SEVEN == ' '){
-			return false;
-		}
-		else if(i == 8 && EIGHT == ' '){
-			return false;
-		}
-		else if(i == 9 && NINE == ' '){
-			return false;
-		}
-		else{ 
-			return true;
-		}
-		
+	if(i == 1 && ONE == ' '){
+  	    return false;
+	} 
+	else if(i == 2 && TWO == ' '){
+	    return false;
 	}
+	else if(i == 3 && THREE == ' '){
+	    return false;
+	}
+	else if(i == 4 && FOUR == ' '){
+	    return false;
+	}
+	else if(i == 5 && FIVE == ' '){
+	    return false;
+	}
+	else if(i == 6 && SIX == ' '){
+	    return false;
+	}
+	else if(i == 7 && SEVEN == ' '){
+	    return false;
+	}
+	else if(i == 8 && EIGHT == ' '){
+	    return false;
+	}
+	else if(i == 9 && NINE == ' '){
+	    return false;
+	}
+	else{ 
+	    return true;
+	}
+    }
 
-    public void input(char symb)
-    {
-		
+    public static void input(char symb)
+    {		
 	Scanner in = new Scanner(System.in);
 	int i = in.nextInt();
 
 	if(isWrongInput(i)){
-		System.out.println("Wrong input, please try again");
-		input(symb);
+	    System.out.println("Wrong input, please try again");
+	    input(symb);
 	}
 	else if(isAlreadyTaken(i)){
-		System.out.println("This place is already taken, please try again");
-		input(symb);
+	    System.out.println("This place is already taken, please try again");
+	    input(symb);
 	}
 	else {
-		System.out.println("EFTIR AD FA UPDATE");//updateboard(symb, i);
+	    updateBoard(symb, i);
 	}
     }
 
-     public String inputTest(int n)
-     {
-	String Andri; 
-         if(isWrongInput(n)){
-		Andri = "Wrong input, please try again";
-                 return Andri;
-             
-         }
-         else if(isAlreadyTaken(n)){
-		Andri = "This place is already taken, please try again";
-                 return Andri;
+    public String inputTest(int n)
+    {
+	String inputTestString; 
+        if(isWrongInput(n)){
+  	    inputTestString = "Wrong input, please try again";
+            return inputTestString;
+        }
+        else if(isAlreadyTaken(n)){
+	    inputTestString = "This place is already taken, please try again";
+            return inputTestString;
          
-         }
-       else{
-	Andri = "Succefull input";
-	return Andri;
+        }
+	else{
+	    inputTestString = "Succefull input";
+	    return inputTestString;
 	} 
+    }
 
-     }
+    public static void play(){
+    	TicTacToe newgame = new TicTacToe();
+	char symb;
+	while(!(hasWon(newgame, rounds))){
+	    if(checkIfDraw(rounds)){
+		printBoard(newgame);
+		System.out.println("!!!DRAW!!!");
+		if(goAgain(newgame))
+		    play();
+		else
+		    System.exit(0);
+	    }
+	    printBoard(newgame);
+	    if(rounds%2 == 0){
+		System.out.println("Player 1, make your move!");
+		symb = 'X';
+	    }
+	    else{
+		System.out.println("Player 2, make your move!");
+		symb = 'O';
+	    }
+	    input(symb);
+	    if(hasWon(newgame, rounds)){
+		printBoard(newgame);
+		if(rounds%2 == 0){
+		    System.out.println("Congratilation!!! Player 1 WON!!!");
+		}
+		else{
+		    System.out.println("Congratilation!!! Player 2 WON!!!");
+		}
+		if(goAgain(newgame))
+		    play();
+		else
+		    System.exit(0);
+	    }
+	    rounds++;
+	}
+    }  
  }
