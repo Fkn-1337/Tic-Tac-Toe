@@ -30,15 +30,20 @@ public class TicTacToe{
         System.out.print("Do you want to go again? (y/n): " );
         Scanner in = new Scanner(System.in);
         String again = in.nextLine();
-        if(again.equals("y")) {
+        if(again.equals("y") || again.equals("Y")) {
             rounds = 0;
             newgame.resetBoard();
             return true;
         }
-        else
+        else if(again.equals("n") || again.equals("N"))
+	{
             return false;
         }
-
+	else {
+	    System.out.println("Please either choose y or n !!");
+	    return goAgain(newgame);
+	}
+    }
         //couldnt test input so we made a dummy function
     public static boolean goAgainTEST(String n){
          Board newgame = new Board();
