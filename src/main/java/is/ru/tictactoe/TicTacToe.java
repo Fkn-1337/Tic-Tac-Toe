@@ -20,7 +20,7 @@ public class TicTacToe{
     }
 
     public static String test(){
-        return("TicTacToe");
+        return "TicTacToe";
     }
 
 
@@ -54,8 +54,9 @@ public class TicTacToe{
              newgame.resetBoard();
              return true;
          }
-         else
+         else {
              return false;
+	 }
          }
 
         //checks if the square is already taken
@@ -67,10 +68,12 @@ public class TicTacToe{
             if(newgame.checkIfDraw(rounds)){
                 newgame.printBoard();
                 System.out.println("!!!DRAW!!!");
-                if(goAgain(newgame))
+                if(goAgain(newgame)){
                     play();
-                else
+		}
+                else{
                     System.exit(0);
+		}
             }
             newgame.printBoard();
             if(rounds%2 == 0){
@@ -90,10 +93,12 @@ public class TicTacToe{
                 else{
                     System.out.println("Congratilation!!! Player 2 WON!!!");
                 }
-                if(goAgain(newgame))
+                if(goAgain(newgame)){
                     play();
-                else
+		}
+                else {
                     System.exit(0);
+		}
             }
             rounds++;
         }

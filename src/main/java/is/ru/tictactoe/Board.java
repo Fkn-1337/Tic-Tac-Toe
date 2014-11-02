@@ -97,8 +97,9 @@ public class Board{
            NINE = symb;
            return true;
         }
-        else
+        else {
             return false;
+       }
     }
 
     public static void printBoard()
@@ -146,11 +147,12 @@ public class Board{
 
     public static boolean checkIfDraw(int rounds)
     {
-        if(rounds >= 9)
+        if(rounds >= 9){
             return true;
-        else
+	}
+        else{
             return false;
-
+	}
     }
 
     //returns true if input is not a legal square
@@ -222,8 +224,7 @@ public class Board{
     public static void input(char symb)
     {
         Scanner in = new Scanner(System.in);
-        int i = in.nextInt();
-
+	int i = in.nextInt();
         if(isWrongInput(i)){
             System.out.println("Wrong input, please try again");
             input(symb);
@@ -236,6 +237,7 @@ public class Board{
             updateBoard(symb, i);
         }
     }
+
 
     public String inputTest(int n)
     {
