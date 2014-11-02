@@ -4,10 +4,6 @@ import java.util.Scanner;
 //import edu.princeton.cs.introcs.In;
 //import edu.princeton.cs.introcs.StdOut;
 
-<!Doctype>
-<html>
-<head>	
-<title>TicTacToe - HogRiders</title>
 public class TicTacToe{
   //R Initializes the squares that players can put their symbol in
 // ONE stands for [0][0]
