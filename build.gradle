@@ -36,3 +36,4 @@ jar {
 
    } 
 }
+task stage { dependsOn installApp }
