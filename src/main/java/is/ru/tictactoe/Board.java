@@ -55,7 +55,7 @@ public class Board{
         if(i == 1){
             board[0][0] = symb;
             ONE = symb;
-            return true;
+            return false;
         }
         else if(i == 2){
             board[0][2] = symb;
